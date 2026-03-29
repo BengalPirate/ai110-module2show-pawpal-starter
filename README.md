@@ -31,7 +31,9 @@ The system is built on a modular OOP design with four core classes:
 - **Owner**: Central data store managing multiple pets
 - **Scheduler**: The "brain" providing sorting, filtering, and conflict detection
 
-See `uml_diagram.md` for the complete class diagram, or `uml_final.png` for the visual representation.
+<a href="/course_images/ai110/uml_final.png" target="_blank"><img src='/course_images/ai110/uml_final.png' title='PawPal+ UML Diagram' width='' alt='PawPal+ System Architecture' class='center-block' /></a>
+
+See `uml_diagram.md` for the Mermaid code version of this diagram.
 
 ## 📸 Demo
 
