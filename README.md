@@ -35,7 +35,7 @@ See `uml_diagram.md` for the complete class diagram, or `uml_final.png` for the 
 
 ## 📸 Demo
 
-![PawPal App Demo](pawpal_demo.png)
+<a href="/course_images/ai110/pawpal_demo.png" target="_blank"><img src='/course_images/ai110/pawpal_demo.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>
 
 The PawPal+ interface features:
 - Sidebar pet management with quick add forms
