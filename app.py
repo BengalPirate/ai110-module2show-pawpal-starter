@@ -149,8 +149,10 @@ if owner.pets and len(owner.get_all_tasks()) > 0:
                             if st.button("Complete", key=f"complete_{i}"):
                                 scheduler.mark_task_complete(task)
                                 st.success(f"Completed '{task.description}'!")
-                                if task.frequency != "once":
+                                if task.frequency == "daily":
                                     st.info(f"Next occurrence scheduled for tomorrow!")
+                                elif task.frequency == "weekly":
+                                    st.info(f"Next occurrence scheduled for next week!")
                                 st.rerun()
 
                     st.divider()

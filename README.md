@@ -31,7 +31,20 @@ The system is built on a modular OOP design with four core classes:
 - **Owner**: Central data store managing multiple pets
 - **Scheduler**: The "brain" providing sorting, filtering, and conflict detection
 
-See `uml_diagram.md` for the complete class diagram.
+See `uml_diagram.md` for the complete class diagram, or `uml_final.png` for the visual representation.
+
+## 📸 Demo
+
+<a href="/course_images/ai110/pawpal_demo.png" target="_blank"><img src='/course_images/ai110/pawpal_demo.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>
+
+The PawPal+ interface features:
+- Sidebar pet management with quick add forms
+- Task scheduling with all configuration options
+- Chronologically sorted daily schedule
+- Visual priority indicators (🔴 high, 🟡 medium, 🟢 low)
+- Conflict detection warnings
+- One-click task completion with automatic recurrence
+- Real-time statistics dashboard
 
 ## Getting Started
 

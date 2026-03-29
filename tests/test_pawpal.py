@@ -253,8 +253,8 @@ class TestScheduler:
         assert "Mochi" in conflicts[0]
         assert "08:00" in conflicts[0]
 
-    def test_no_conflict_different_pets(self):
-        """Verify that same time for different pets is not a conflict."""
+    def test_conflict_different_pets(self):
+        """Verify that same time for different pets IS detected as a conflict."""
         owner = Owner("Jordan")
 
         mochi = Pet(name="Mochi", species="dog", age=3)
@@ -271,7 +271,11 @@ class TestScheduler:
 
         conflicts = scheduler.detect_conflicts(all_tasks)
 
-        assert len(conflicts) == 0
+        # Now should detect conflict between different pets at same time
+        assert len(conflicts) == 1
+        assert "08:00" in conflicts[0]
+        assert "Mochi" in conflicts[0]
+        assert "Whiskers" in conflicts[0]
 
     def test_mark_task_complete_with_recurrence(self):
         """Verify that marking a recurring task complete creates next occurrence."""

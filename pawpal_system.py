@@ -134,14 +134,17 @@ class Scheduler:
         return [task for task in tasks if task.pet_name == pet_name]
 
     def detect_conflicts(self, tasks: List[Task]) -> List[str]:
-        """Detect scheduling conflicts (same time for same pet)."""
+        """Detect scheduling conflicts (same time for same pet or different pets)."""
         conflicts = []
         # Check each pair of tasks
         for i, task1 in enumerate(tasks):
             for task2 in tasks[i+1:]:
-                # Conflict if same pet and same time
-                if task1.pet_name == task2.pet_name and task1.time == task2.time:
-                    conflict_msg = f"Conflict: {task1.pet_name} has '{task1.description}' and '{task2.description}' both at {task1.time}"
+                # Conflict if any two tasks have the same time
+                if task1.time == task2.time:
+                    if task1.pet_name == task2.pet_name:
+                        conflict_msg = f"Conflict: {task1.pet_name} has '{task1.description}' and '{task2.description}' both at {task1.time}"
+                    else:
+                        conflict_msg = f"Conflict: {task1.pet_name}'s '{task1.description}' and {task2.pet_name}'s '{task2.description}' both at {task1.time}"
                     if conflict_msg not in conflicts:
                         conflicts.append(conflict_msg)
         return conflicts
